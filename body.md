@@ -1,22 +1,26 @@
-Presentation Style:
+# Gem Building
+## Professionalizing Your Ruby Code
+
+#### Presentation Style:
 
 - It's a workshop, so do some typing in your project folder
-- To show off change sets, click the links in this MD to view the git diffs on github
-- Use a slide show periodically if time provides, to show visual graphs of like... the folders effected?  
+- Build a presentation with reveal.js
+  - Write presentation speaking points to be read off of smart phone
+  - Present changes to code via resulting files
+  - Have the whole tutorial open on a separate tab
 
-
-#### Speaking Notes/ Summary
+#### Speaking Notes/ ToC
 
 ###### Section 1 - Gems by Example
-  - Describe gems
-  - Walk through hub usage
+  - What's a Gem?
+  - Example of a Gem (hub)
   - The value of packaging your code
 
 
 ###### Section 2 - Build Pseudo Complex large_app
   - The Formation of Our Software
   - Rails App, Square 1
-  - Add psudo complexity, Messy controller
+  - Add Pseudo complexity, Messy controller
   - Improve via Basic Method Extraction Refactoring
   - OO Refactor
 
@@ -38,7 +42,7 @@ Presentation Style:
     - Refactor
     - checkout g2: easier to use
     - ¿ Is it beautiful?
-    - Checkout g3: class gets own fil
+    - Checkout g3: class gets own file
 
 ###### Section 4 - Hook it into the Rails App
   - Source Gem Off File System
@@ -47,17 +51,18 @@ Presentation Style:
   - Who haz thoughts?
 
 
+# Section 1 - Gems by Example
 
-## Describe Gems
+## What's a Gem?
 
-So if you're new to ruby gems, let's start out with a very basic description.
+So if you're new to ruby gems, let's start out with a very basic description.  
 
   "A gem is a piece of ruby code that has been formatted into an easy to manage package."
 
 So if you've ever used the `apt-get` package manager on debian based linux distros, that's pretty much what gems are, but for code within the ruby echosystem.  
 
 
-## Example of a Gem
+## Example of a Gem (hub)
 
 Let's go over an example of a very popular gem, Hub.  Hub is a ruby gem that allows you to interact with github from the command line.  
 
@@ -90,10 +95,6 @@ By default the latest version is used, which is probably ideal, but you can expl
 I don't know how this works... it just does.  
 
 
-
-
-
-
 ## The value of packaging your code
 
 When I first learned to package my code, I became filled me with feelings of empowerment.  
@@ -114,6 +115,7 @@ Everything about making gems leads to really complicated, stressful things sudde
 So let's get started making our lives better by packaging up some code.  
 
 
+
 # Section 2 - Build Pseudo Complex large_app
 
 ## The Formation of Our Software
@@ -122,7 +124,7 @@ Before we get started building a gem, let's suppose that we have some code in an
 
 > What should that logic be?
 
-Well... **what if** we had to encrypt and decrypt a string from within an important web app?  And we expect to be using this same crypto algo in all our other rails apps.  This is the perfect place to use a gem.  
+Well... **what if** we had to encrypt and decrypt a string from within an important web app?  And we expect to be using this same crypto algo in several other rails apps.  This is the perfect place to use a gem.  
 
 This is a fairly typical workflow for a gem's creation; we do this by first stumbling upon code that exists in a large app and then we decide to 'extract' the functionality into its own gem because late in the game we realized how re-usable this code was, or who atomically complex it has become.  
 
@@ -130,9 +132,13 @@ This is a fairly typical workflow for a gem's creation; we do this by first stum
 
 *Wait to see if it's remotely applicable*
 
-Wait, gems don't form like stars, but rails apps do!  All this stuff, these space particles, mostly hydrogen, just kinda drifted in -- gravitated towards this central, monolithic body.  And after a certain point, things started to get hot.  Things got out of hand!  There was too much friction, too much stuff, and things are on the verge of igniting in a blaze of nuclear fusion -- this is the kind of fire that won't go out in our god damn lifetimes.  It's on its way to becoming a fixture of the universe.  Once a star reaches that point, it's completely out of our control.  That's what a feature-rich rails application is: A mass of particles on the verge of nuclear detonation.  
+I was hoping that someone could tie in the creation of stars to the creation of gems.  But I realized that it's not gems that form like stars, rather rails apps do!  All this stuff, these space particles, mostly hydrogen, just kinda drifted in -- gravitated towards this central, monolithic body.  And after a certain point, things started to get hot.  Things got out of hand!  There was too much friction, too much stuff, and things are on the verge of igniting in a blaze of nuclear fusion -- this is the kind of fire that won't go out in our god damn lifetimes.  Once a star reaches that point, it's completely out of our control.  At this point, this point of no return it's become a fixture of the universe.  A symbol of life amidst haphazardness, amidst chaos --completely absent of any notions of coercion or management.  
 
-That said, lets begin by first creating a fake rails app that needs this functionality.  
+Did you bank 50k this year?  100k?  200k?  Ok... ok... but are you a fixture of the universe...  Are you the reason for the presence of the elemental table we experience as a part of our physical existence?  No madams and sirs, we are not of these things.  Try as one might with ascriptions of measurements and commendations, those on that path are nothing more than kidders and self-delusionists with but a loose sense of context.
+
+Anyway that's what a feature-rich rails application is: A mass of particles on the verge of nuclear detonation.  
+
+With that said, lets begin by first creating a fake rails app that we'll add pseudo complex functionality to.  
 
 
 
@@ -166,7 +172,7 @@ Ok, there we go, all of us now have a perfect rails app with a home page.
 Let's add functionality to it.  
 
 
-## Add psudo complexity, Messy controller
+## Add Pseudo complexity, Messy controller
 
 * In the controller for pages#home, we'll send some strings of text to the home page view.  
   * We'll present a string in 3 forms on the views:  untouched, encrypted and decrypted.  
@@ -583,7 +589,7 @@ Have a look at this diff
 
 ###### checkout g3: class gets own file
 
-I have to admit it's a bit weird having a two files named the same thing in a ruby application.  We can look at this of an instance where we named our gem wrong, or where we named our class wrong.  Either way lets not think about it too much and get on with the workshop.  
+I have to admit it's a bit weird having two files named the same thing in a ruby application.  We can look at this of an instance where we named our gem wrong, or where we named our class wrong.  Either way lets not think about it too much and get on with the workshop.  
 
 Ok, before we can use this code from a Gemfile, we need to zip the package up into a `.gem` file.  For this we use rake's builtin `build` command.  
 
