@@ -58,7 +58,7 @@ So if you're new to ruby gems, let's start out with a very basic description.
 
   "A gem is a piece of ruby code that has been formatted into an easy to manage package."
 
-So if you've ever used the `apt-get` package manager on debian based linux distros, that's pretty much what gems are, but for code within the ruby echosystem.  
+So if you've ever used the `apt-get` package manager on debian based linux distros, that's pretty much what gems are, but for code within the ruby ecosystem.  
 
 
 ## Example of a Gem (hub)
@@ -161,9 +161,8 @@ For the benefit of the class, I'll begin building what you just cloned with the 
   rails _4.2.6_ new large_app
   cd large_app
   rails g controller pages home
-  awk 'NR==1{print; print "  root to: \"pages#home\""} NR!=1' config/routes.rb > tmp.swp && mv tmp.swp config/routes.rb
-
-  # instructor only command:  cp -R ../large_app_helper/.git .git # that app should be at correct commit, clean pwd
+  awk 'NR==1{print; print "  root to: \"pages#home\""} NR!=1' config/routes.rb > tmp.swp && \
+    mv tmp.swp config/routes.rb
 ```
 
 Ok, there we go, all of us now have a perfect rails app with a home page.
@@ -443,7 +442,7 @@ This is the 'entry point' for your ruby app.  It's the first file loaded when so
 
 ###### lib/APP_NAME/
 
-This folder is for when things get out of hand and you need to break your ruby library up into multiple files.  An easy rule for breaking up your ruby library is that each class should have it's own file.  If a class is massive and has many subclasses that are only used by that one class... then this class can have it's own folder if you want.  But with rubygems, you actually get to employ a little bit of creativity as to how things are organized...  well, not really creativity, I think of it as impromptu logic deduction.  
+This folder is for when things get out of hand and you need to break your ruby code up into multiple files.  An easy rule for breaking up your ruby library is that each class should have it's own file.  If a class is massive and has many subclasses that are only used by that one class... then this class can have it's own folder if you want.  But with rubygems, you actually get to employ a little bit of creativity as to how things are organized...  well, not really creativity, I think of it as impromptu logic deduction.  
 
 
 ###### lib/APP_NAME/version.rb
@@ -451,12 +450,10 @@ This folder is for when things get out of hand and you need to break your ruby l
 This file is where you define the version of your gem.  There's code in the gemspec file that sources this file such that it can be placed into the configuration object fed to the tool chain.  
 
 
-
-
-
 ###### bin/ vs exe/
 
 The bin folder used to be where people put their 'binary' files, now it's got this setup and console rubish in it.  I'm not fond of either of those files, but the new convention is to put your CLI wrappers in the `exe/` folder rather than in `bin/`.  Feel free to delete this folder in favor of using `pry` and unit tests.  
+
 
 ###### spec/
 
@@ -589,7 +586,7 @@ Have a look at this diff
 
 I have to admit it's a bit weird having two files named the same thing in a ruby application.  We can look at this of an instance where we named our gem wrong, or where we named our class wrong.  Either way lets not think about it too much and get on with the workshop.  
 
-Ok, before we can use this code from a Gemfile, we need to zip the package up into a `.gem` file.  For this we use rake's builtin `build` command.  
+Ok, before we can use this code from a Gemfile, we need to zip the package up into a `.gem` file.  For this we use rake's built-in `build` command.  
 
 ```
   rake build
@@ -608,7 +605,7 @@ So now is a good time to hook our new gem into our rails app.  Upon the early st
 
 (Gemfile)
 ```
-gem 'kewl_crypto', path: "#{`pwd`.chomp}/kewl_crypto"
+gem 'kewl_crypto', path: "../kewl_crypto"
 ```
 
 ###### Cut Old Logic from Rails App
@@ -635,9 +632,8 @@ thoughts?
 
 
 
-Quotes:
 
-"The NSA won't know what hit them."
+
 
 
 

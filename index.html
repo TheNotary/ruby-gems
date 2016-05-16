@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>body</title>
+      <style>
+       body {font-family: 'Helvetica Neue' ;}
+       .site-wrapper { width: 800px; margin-left:auto; margin-right: auto; }
+      </style>
+      
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(56, 58, 66); overflow: auto; background-color: rgb(250, 250, 250); }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(0, 0, 0); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(0, 0, 0); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(94, 97, 110); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(82, 111, 255); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(94, 97, 110); border-color: rgb(209, 209, 210); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top-width: 2px; border-top-style: dashed; border-top-color: rgb(209, 209, 210); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(0, 0, 0); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(209, 209, 210); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(0, 0, 0); background-color: rgb(234, 234, 235); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(240, 240, 240); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(0, 0, 0); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(209, 209, 210) rgb(209, 209, 210) rgb(193, 193, 194); background-color: rgb(234, 234, 235); }
+.markdown-preview[data-use-github-style] { font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); overflow: scroll; background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left-width: 4px; border-left-style: solid; border-left-color: rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { border-top-width: 1px; border-top-style: solid; border-top-color: rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .horizontal-scrollbar { visibility: visible; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+
+pre.editor-colors,
+.host {
+  background-color: #fafafa;
+  color: #383a42;
+}
+pre.editor-colors .line.cursor-line,
+.host .line.cursor-line {
+  background-color: rgba(56, 58, 66, 0.04);
+}
+pre.editor-colors .invisible,
+.host .invisible {
+  color: #383a42;
+}
+pre.editor-colors .cursor,
+.host .cursor {
+  border-left: 2px solid #526fff;
+}
+pre.editor-colors .selection .region,
+.host .selection .region {
+  background-color: #ededed;
+}
+pre.editor-colors .bracket-matcher .region,
+.host .bracket-matcher .region {
+  border-bottom: 1px solid #526fff;
+  box-sizing: border-box;
+}
+pre.editor-colors .invisible-character,
+.host .invisible-character {
+  color: rgba(56, 58, 66, 0.2);
+}
+pre.editor-colors .indent-guide,
+.host .indent-guide {
+  color: rgba(56, 58, 66, 0.2);
+}
+pre.editor-colors .wrap-guide,
+.host .wrap-guide {
+  background-color: rgba(56, 58, 66, 0.2);
+}
+pre.editor-colors .gutter .line-number,
+.host .gutter .line-number {
+  color: #9d9d9f;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.cursor-line,
+.host .gutter .line-number.cursor-line {
+  color: #4d5375;
+  background-color: #f2f2f2;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection,
+.host .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+}
+pre.editor-colors .gutter .line-number .icon-right,
+.host .gutter .line-number .icon-right {
+  color: #383a42;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before,
+.host .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after,
+.host .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(255, 20, 20, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.folded,
+.host .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+.host .gutter .line-number:after,
+pre.editor-colors .fold-marker:after,
+.host .fold-marker:after {
+  color: #4d5375;
+}
+.comment {
+  color: #a0a1a7;
+  font-style: italic;
+}
+.entity.name.type {
+  color: #c18401;
+}
+.entity.other.inherited-class {
+  color: #50a14f;
+}
+.keyword {
+  color: #a626a4;
+}
+.keyword.control {
+  color: #a626a4;
+}
+.keyword.operator {
+  color: #383a42;
+}
+.keyword.other.special-method {
+  color: #4078f2;
+}
+.keyword.other.unit {
+  color: #986801;
+}
+.storage {
+  color: #a626a4;
+}
+.storage.type.annotation,
+.storage.type.primitive {
+  color: #a626a4;
+}
+.storage.modifier.package,
+.storage.modifier.import {
+  color: #383a42;
+}
+.constant {
+  color: #986801;
+}
+.constant.variable {
+  color: #986801;
+}
+.constant.character.escape {
+  color: #0184bc;
+}
+.constant.numeric {
+  color: #986801;
+}
+.constant.other.color {
+  color: #0184bc;
+}
+.constant.other.symbol {
+  color: #0184bc;
+}
+.variable {
+  color: #e45649;
+}
+.variable.interpolation {
+  color: #ca1243;
+}
+.variable.parameter {
+  color: #383a42;
+}
+.string {
+  color: #50a14f;
+}
+.string.regexp {
+  color: #0184bc;
+}
+.string.regexp .source.ruby.embedded {
+  color: #c18401;
+}
+.string.other.link {
+  color: #e45649;
+}
+.punctuation.definition.comment {
+  color: #a0a1a7;
+}
+.punctuation.definition.method-parameters,
+.punctuation.definition.function-parameters,
+.punctuation.definition.parameters,
+.punctuation.definition.separator,
+.punctuation.definition.seperator,
+.punctuation.definition.array {
+  color: #383a42;
+}
+.punctuation.definition.heading,
+.punctuation.definition.identity {
+  color: #4078f2;
+}
+.punctuation.definition.bold {
+  color: #c18401;
+  font-weight: bold;
+}
+.punctuation.definition.italic {
+  color: #a626a4;
+  font-style: italic;
+}
+.punctuation.section.embedded {
+  color: #ca1243;
+}
+.punctuation.section.method,
+.punctuation.section.class,
+.punctuation.section.inner-class {
+  color: #383a42;
+}
+.support.class {
+  color: #c18401;
+}
+.support.type {
+  color: #0184bc;
+}
+.support.function {
+  color: #0184bc;
+}
+.support.function.any-method {
+  color: #4078f2;
+}
+.entity.name.function {
+  color: #4078f2;
+}
+.entity.name.class,
+.entity.name.type.class {
+  color: #c18401;
+}
+.entity.name.section {
+  color: #4078f2;
+}
+.entity.name.tag {
+  color: #e45649;
+}
+.entity.other.attribute-name {
+  color: #986801;
+}
+.entity.other.attribute-name.id {
+  color: #4078f2;
+}
+.meta.class {
+  color: #c18401;
+}
+.meta.class.body {
+  color: #383a42;
+}
+.meta.method-call,
+.meta.method {
+  color: #383a42;
+}
+.meta.definition.variable {
+  color: #e45649;
+}
+.meta.link {
+  color: #986801;
+}
+.meta.require {
+  color: #4078f2;
+}
+.meta.selector {
+  color: #a626a4;
+}
+.meta.separator {
+  background-color: #373b41;
+  color: #383a42;
+}
+.meta.tag {
+  color: #383a42;
+}
+.none {
+  color: #383a42;
+}
+.invalid.deprecated {
+  color: #000000 !important;
+  background-color: #f2a60d !important;
+}
+.invalid.illegal {
+  color: #ffffff !important;
+  background-color: #ff1414 !important;
+}
+.markup.bold {
+  color: #986801;
+  font-weight: bold;
+}
+.markup.changed {
+  color: #a626a4;
+}
+.markup.deleted {
+  color: #e45649;
+}
+.markup.italic {
+  color: #a626a4;
+  font-style: italic;
+}
+.markup.heading .punctuation.definition.heading {
+  color: #4078f2;
+}
+.markup.inserted {
+  color: #50a14f;
+}
+.markup.list {
+  color: #e45649;
+}
+.markup.quote {
+  color: #986801;
+}
+.markup.raw {
+  color: #50a14f;
+}
+.source.cs .keyword.operator {
+  color: #a626a4;
+}
+.source.css .property-name,
+.source.css .property-value {
+  color: #696c77;
+}
+.source.css .property-name.support,
+.source.css .property-value.support {
+  color: #383a42;
+}
+.source.gfm .markup {
+  -webkit-font-smoothing: auto;
+}
+.source.gfm .markup.heading {
+  color: #e45649;
+}
+.source.gfm .markup.link {
+  color: #a626a4;
+}
+.source.gfm .link .entity {
+  color: #4078f2;
+}
+.source.ini .keyword.other.definition.ini {
+  color: #e45649;
+}
+.source.java .storage.modifier.import {
+  color: #c18401;
+}
+.source.java .storage.type {
+  color: #c18401;
+}
+.source.java-properties .meta.key-pair {
+  color: #e45649;
+}
+.source.java-properties .meta.key-pair > .punctuation {
+  color: #383a42;
+}
+.source.json .meta.structure.dictionary.json > .string.quoted.json {
+  color: #e45649;
+}
+.source.json .meta.structure.dictionary.json > .string.quoted.json > .punctuation.string {
+  color: #e45649;
+}
+.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json,
+.source.json .meta.structure.array.json > .value.json > .string.quoted.json,
+.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json > .punctuation,
+.source.json .meta.structure.array.json > .value.json > .string.quoted.json > .punctuation {
+  color: #50a14f;
+}
+.source.json .meta.structure.dictionary.json > .constant.language.json,
+.source.json .meta.structure.array.json > .constant.language.json {
+  color: #0184bc;
+}
+.source.ruby .constant.other.symbol > .punctuation {
+  color: inherit;
+}
+.source.python .keyword.operator.logical.python {
+  color: #a626a4;
+}
+.source.python .variable.parameter {
+  color: #986801;
+}
+</style>
+  </head>
+  <body class='markdown-preview'>
+  <div class="site-wrapper">
+  <h1 id="gem-building">Gem Building</h1>
+<h2 id="professionalizing-your-ruby-code">Professionalizing Your Ruby Code</h2>
+<h4 id="presentation-style-">Presentation Style:</h4>
+<ul>
+<li>It&#39;s a workshop, so do some typing in your project folder</li>
+<li>Build a presentation with reveal.js<ul>
+<li>Write presentation speaking points to be read off of smart phone</li>
+<li>Present changes to code via resulting files</li>
+<li>Have the whole tutorial open on a separate tab</li>
+</ul>
+</li>
+</ul>
+<h4 id="speaking-notes-toc">Speaking Notes/ ToC</h4>
+<h6 id="section-1-gems-by-example">Section 1 - Gems by Example</h6>
+<ul>
+<li>What&#39;s a Gem?</li>
+<li>Example of a Gem (hub)</li>
+<li>The value of packaging your code</li>
+</ul>
+<h6 id="section-2-build-pseudo-complex-large_app">Section 2 - Build Pseudo Complex large_app</h6>
+<ul>
+<li>The Formation of Our Software</li>
+<li>Rails App, Square 1</li>
+<li>Add Pseudo complexity, Messy controller</li>
+<li>Improve via Basic Method Extraction Refactoring</li>
+<li>OO Refactor</li>
+</ul>
+<h6 id="section-3-gem-extraction">Section 3 - Gem Extraction</h6>
+<ul>
+<li>Bundler Usage and Configs</li>
+<li>The Anatomy of a Gem<ul>
+<li>APP_NAME.gemspec</li>
+<li>lib/APP_NAME.rb</li>
+<li>lib/APP_NAME/</li>
+<li>lib/APP_NAME/version.rb</li>
+<li>bin/ vs exe/</li>
+<li>spec/</li>
+</ul>
+</li>
+<li>Gem Extraction, Square 1<ul>
+<li>¿ Where do I paste my code?</li>
+<li>¿ What code do we cut from larger_app?</li>
+<li>checkout g1: Basic Extraction</li>
+</ul>
+</li>
+<li>Improve Library Interface<ul>
+<li>How Cumbersome</li>
+<li>Refactor</li>
+<li>checkout g2: easier to use</li>
+<li>¿ Is it beautiful?</li>
+<li>Checkout g3: class gets own file</li>
+</ul>
+</li>
+</ul>
+<h6 id="section-4-hook-it-into-the-rails-app">Section 4 - Hook it into the Rails App</h6>
+<ul>
+<li>Source Gem Off File System</li>
+<li>Cut Old Logic from Rails App</li>
+<li>A Manual Test Indicates it Worked!</li>
+<li>Who haz thoughts?</li>
+</ul>
+<h1 id="section-1-gems-by-example">Section 1 - Gems by Example</h1>
+<h2 id="what-s-a-gem-">What&#39;s a Gem?</h2>
+<p>So if you&#39;re new to ruby gems, let&#39;s start out with a very basic description.  </p>
+<p>  &quot;A gem is a piece of ruby code that has been formatted into an easy to manage package.&quot;</p>
+<p>So if you&#39;ve ever used the <code>apt-get</code> package manager on debian based linux distros, that&#39;s pretty much what gems are, but for code within the ruby ecosystem.  </p>
+<h2 id="example-of-a-gem-hub-">Example of a Gem (hub)</h2>
+<p>Let&#39;s go over an example of a very popular gem, Hub.  Hub is a ruby gem that allows you to interact with github from the command line.  </p>
+<p>Hub can easily be installed on any machine that has ruby installed by the below command:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>$&nbsp;&nbsp;gem&nbsp;install&nbsp;hub</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Fetching:&nbsp;hub-1.12.4.gem&nbsp;(100%)</span></span></span></div></pre><p>Go ahead and try it now.  In the command&#39;s output, you&#39;ll see that it fetched <code>hub-1.12.4.gem</code>.  That&#39;s telling you the name of the gem and the version installed... Gem defaults to the latest version of any given gem.  If that version is no good, you can tell gem to install a specific version manually.  </p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>$&nbsp;&nbsp;gem&nbsp;install&nbsp;hub&nbsp;-v&nbsp;1.12.3</span></span></span></div></pre><p>Hub is a CLI tool.  Most ruby gems are just libraries, code that you use from within other ruby code, but we&#39;re installing a ruby gem that has a &quot;binary file&quot; component.<br>Once you install a CLI gem, the binary becomes exposed on the system path.  Typing <code>which hub</code> will show you where this &quot;binary&quot; is.<br>I&#39;m scare quoting the term binary because if you open that file up, you&#39;ll actually see that it&#39;s just a ruby script with a shebang.  </p>
+<p>Now you have two versions of a CLI gem on your system.  How do you choose between them?<br>By default the latest version is used, which is probably ideal, but you can explicitly declare which gem to use by making the first argument an underscoric version identifier.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>$&nbsp;hub&nbsp;_1.12.3_&nbsp;--version</span></span></span></div></pre><p>I don&#39;t know how this works... it just does.  </p>
+<h2 id="the-value-of-packaging-your-code">The value of packaging your code</h2>
+<p>When I first learned to package my code, I became filled me with feelings of empowerment.<br>Not only was I able to look at all those gems that other professionals had built, and understand how that was made useable to me...
+But it also gave me the power to:  </p>
+<ul>
+<li>Easily Deploy my code on a foreign server</li>
+<li>Easily include my code in OTHER ruby projects</li>
+<li>Easily update my code (after the fact) without breaking dependent codebases</li>
+<li><p>Easily share my code with others</p>
+<p>Everything about making ruby gems leads to:</p>
+<ul>
+<li>Increased developer performance</li>
+<li>Reduced overhead on compatibility issues</li>
+<li>And overall lower cost per employee</li>
+</ul>
+</li>
+</ul>
+<p>Everything about making gems leads to really complicated, stressful things suddenly becoming <em>easy</em>.  </p>
+<p>So let&#39;s get started making our lives better by packaging up some code.  </p>
+<h1 id="section-2-build-pseudo-complex-large_app">Section 2 - Build Pseudo Complex large_app</h1>
+<h2 id="the-formation-of-our-software">The Formation of Our Software</h2>
+<p>Before we get started building a gem, let&#39;s suppose that we have some code in an actual large application that needs to be extracted out into a gem.  Better than supposing, let&#39;s build a mock large application right now.  And in doing so, we&#39;ll add some ruby logic that will later be extracted into a gem.  </p>
+<blockquote>
+<p>What should that logic be?</p>
+</blockquote>
+<p>Well... <strong>what if</strong> we had to encrypt and decrypt a string from within an important web app?  And we expect to be using this same crypto algo in several other rails apps.  This is the perfect place to use a gem.  </p>
+<p>This is a fairly typical workflow for a gem&#39;s creation; we do this by first stumbling upon code that exists in a large app and then we decide to &#39;extract&#39; the functionality into its own gem because late in the game we realized how re-usable this code was, or who atomically complex it has become.  </p>
+<blockquote>
+<p>Does anyone know how a star is formed?</p>
+</blockquote>
+<p><em>Wait to see if it&#39;s remotely applicable</em></p>
+<p>I was hoping that someone could tie in the creation of stars to the creation of gems.  But I realized last night that it&#39;s not gems that form like stars, rather rails apps do!  All this stuff, these space particles, mostly hydrogen, just kinda drifted in -- gravitated towards this central, monolithic body.  And after a certain point, things started to get hot.  Things got out of hand!  There was too much friction, too much stuff, and things reached the verge of igniting in a blaze of nuclear fusion -- this is the kind of fire that won&#39;t extinguish in our god, damn lifetimes.  Once a star reaches that point, it&#39;s completely out of anyone&#39;s control.  At this point, this point of no return it becomes a fixture of the universe.  A symbol of life amidst haphazardness, amidst chaos --completely absent of any notions of coercion or management outside of it&#39;s own brilliant, blazing body.  </p>
+<p>Did you bank 50k this year?  100k?  200k?  Ok... ok... but are you a fixture of the universe...  Are you the reason for the spectrum that we know as the periodic table of elements?  No madams and sirs, we are not of these things.  And try as some might with ascriptions of measurements and commendations, those on that path are nothing more than kidders and self-delusionists with but a loose sense of context.  A more noble question than salary or rank I recommend everyone ask themselves is this: am I creating beauty of some kind?  </p>
+<p>Anyway that&#39;s what a feature-rich rails application is: A mass of particles on the verge of nuclear detonation.  And maybe every good rails app --MAYBE EVERY GOOD THING should lead up to an explosion.  A really nice one that produces more for the universe than what existed before hand.  Maybe that&#39;s what I&#39;m getting at.</p>
+<p>With that said, lets begin by first creating a fake rails app that we&#39;ll add pseudo complex functionality to.  </p>
+<h2 id="rails-app-square-1">Rails App, Square 1</h2>
+<p>First, everyone should just clone my repo with the following command:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>git&nbsp;clone&nbsp;</span><span class="markup underline link https hyperlink"><span>https://github.com/thenotary/large</span></span><span>_app</span></span></span></div></pre><p>Also, checkout the first commit.  </p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>git&nbsp;checkout&nbsp;84ea25c</span></span></span></div></pre><p>For the benefit of the class, I&#39;ll begin building what you just cloned with the below simple commands....</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>rails&nbsp;_4.2.6_&nbsp;new&nbsp;large_app</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;cd&nbsp;large_app</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;rails&nbsp;g&nbsp;controller&nbsp;pages&nbsp;home</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;awk&nbsp;&#39;NR==1{print;&nbsp;print&nbsp;&quot;&nbsp;&nbsp;root&nbsp;to:&nbsp;\&quot;pages#home\&quot;&quot;}&nbsp;NR!=1&#39;&nbsp;config/routes.rb&nbsp;&gt;&nbsp;tmp.swp&nbsp;&amp;&amp;&nbsp;/ 
+    mv&nbsp;tmp.swp&nbsp;config/routes.rb</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span></span></span></span></div></pre><p>Ok, there we go, all of us now have a perfect rails app with a home page.
+Let&#39;s add functionality to it.  </p>
+<h2 id="add-pseudo-complexity-messy-controller">Add Pseudo complexity, Messy controller</h2>
+<ul>
+<li>In the controller for pages#home, we&#39;ll send some strings of text to the home page view.  <ul>
+<li>We&#39;ll present a string in 3 forms on the views:  untouched, encrypted and decrypted.  </li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>So go into the controller to conduct some arbitrary crypto...</li>
+</ol>
+<p>(app/controllers/pages_controller.rb)</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>class&nbsp;PagesController&nbsp;&lt;&nbsp;ApplicationController</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;home</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>@untouched&nbsp;=&nbsp;&quot;Hello&nbsp;Gems&quot;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;@encrypted&nbsp;=&nbsp;Base64.encode64(@untouched)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;@decrypted&nbsp;=&nbsp;Base64.decode64(@decrypted)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>end</span></span></span></div></pre><ol>
+<li>Then I go into the view and render the work done in the controller...</li>
+</ol>
+<p>(app/views/pages/home.html.erb)</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;h1&gt;Pages#home&lt;/h1&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;ul&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>&lt;li&gt;&lt;%=&nbsp;@untouched&nbsp;%&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&lt;li&gt;&lt;%=&nbsp;@encrypted&nbsp;%&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&lt;li&gt;&lt;%=&nbsp;@decrypted&nbsp;%&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;/ul&gt;</span></span></span></div></pre><ol>
+<li>Now test it... and it works</li>
+</ol>
+<h2 id="improve-via-basic-method-extraction-refactoring">Improve via Basic Method Extraction Refactoring</h2>
+<p>Now&#39;s a good time to think about whether our code is really ready to show off to our peers.
+<em>What if</em> we wanted to add more commands to take place during encryption to make things more secure?<br>Let&#39;s pretend for the moment that this crypto code is going to get really messy, really fast.  </p>
+<p>From what I can see, there a lot of random logic just floating around in the controller.</p>
+<blockquote>
+<p>What can I do to clean up my logic?</p>
+</blockquote>
+<p><em>Wait for audience to recommend &quot;methods&quot; or &quot;models&quot;</em></p>
+<p>[Methods|models] great!  Let&#39;s do it.  </p>
+<p>(app/controllers/pages_controller.rb)</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>class&nbsp;PagesController&nbsp;&lt;&nbsp;ApplicationController</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;home</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>@untouched&nbsp;=&nbsp;&quot;Hello&nbsp;Gems&quot;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;@encrypted&nbsp;=&nbsp;encrypt(@untouched)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;@decrypted&nbsp;=&nbsp;decrypt(@encrypted)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;encrypt(string)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Base64.encode64(string)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;decrypt(string)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Base64.decode64(string)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>end</span></span></span></div></pre><p>So that&#39;s better, we have methods.  And we can now call them.<br>At this point we should be caught up to the next commit, let me check my work and
+fast forward HEAD.  </p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>git&nbsp;diff&nbsp;HEAD&nbsp;1e7254e</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>git&nbsp;stash</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>#&nbsp;check&nbsp;out&nbsp;s1:&nbsp;methods&nbsp;used</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>git&nbsp;checkout&nbsp;1e7254e</span></span></span></div></pre><p>I&#39;m so eager to put these new methods into their own file,
+but before we do that
+let&#39;s refactor our code so it&#39;s more object oriented.  </p>
+<h2 id="oo-refactor">OO Refactor</h2>
+<p>So it&#39;s fastest for everyone to just have a look at this diff on github.  This is the refactor that I&#39;m going to do: <a href="https://github.com/TheNotary/large_app/commit/4d8c4dba8223984373dc5d2f2ea4b116f6955e1c">https://github.com/TheNotary/large_app/commit/4d8c4dba8223984373dc5d2f2ea4b116f6955e1c</a></p>
+<p>So I added a new class, directly in the PagesController, this is a horrible anti-pattern btw!</p>
+<p>(app/controllers/pages_controller.rb)</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>class&nbsp;PagesController&nbsp;&lt;&nbsp;ApplicationController</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;home</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>@message&nbsp;=&nbsp;KewlCrypto.new(&quot;Hello&nbsp;Gems&quot;)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>#&nbsp;Warning:&nbsp;placement&nbsp;here&nbsp;is&nbsp;an&nbsp;anti-pattern</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;class&nbsp;KewlCrypto</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>attr_reader&nbsp;:untouched</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;initialize(string)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>@untouched&nbsp;=&nbsp;string</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;encrypted</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Base64.encode64(@untouched)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;decrypted</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Base64.decode64(@untouched)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>end</span></span></span></div></pre><p>Above, I instantiated 1 object in the home action with a single line, rather than using three instance variables to pass in my data (that&#39;s great!)</p>
+<p>Now check out the view:</p>
+<p>(app/views/pages/home.html.erb)</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;h1&gt;Pages#home&lt;/h1&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;ul&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>&lt;li&gt;&lt;%=&nbsp;@message.untouched&nbsp;%&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&lt;li&gt;&lt;%=&nbsp;@message.encrypted&nbsp;%&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&lt;li&gt;&lt;%=&nbsp;PagesController::KewlCrypto.new(@message.encrypted).decrypted&nbsp;%&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;/ul&gt;</span></span></span></div></pre><p>There&#39;s more lines in the view, but that&#39;s because our original display was entirely contrived and our new model likens more closely to something you&#39;d see and work with in the wild.  </p>
+<p>At this point, we can fast forward  </p>
+<h6 id="fast-forward-s2-starting-oo-but-putting-things-in-wrong-spot">FAST FORWARD:  s2: starting OO, but putting things in wrong spot</h6>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>git&nbsp;diff&nbsp;HEAD&nbsp;4d8c4db</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>git&nbsp;stash;&nbsp;git&nbsp;stash&nbsp;drop</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>#&nbsp;check&nbsp;out</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>git&nbsp;checkout&nbsp;4d8c4db</span></span></span></div></pre><p>Ok, so now that we have a class right here in the controller...  and it&#39;s giving us weird name spacing issues as you can see in the view...  Let&#39;s really quickly move that into the models directory where it somewhat belongs and tweak our code.  </p>
+<p>(app/models/kewl_crypto.rb)</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>class&nbsp;KewlCrypto</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>attr_reader&nbsp;:untouched</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;initialize(string)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>@untouched&nbsp;=&nbsp;string</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;encrypted</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Base64.encode64(@untouched)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;decrypted</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Base64.decode64(@untouched)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>end</span></span></span></div></pre><p>(app/controllers/pages_controller.rb)</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>class&nbsp;PagesController&nbsp;&lt;&nbsp;ApplicationController</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;home</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>@untouched&nbsp;=&nbsp;&quot;Hello&nbsp;Gems&quot;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;@encrypted&nbsp;=&nbsp;encrypt(@untouched)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;@decrypted&nbsp;=&nbsp;decrypt(@encrypted)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;encrypt(string)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Base64.encode64(string)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;decrypt(string)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Base64.decode64(string)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>end</span></span></span></div></pre><p>(app/views/pages/home.html.erb)</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;h1&gt;Pages#home&lt;/h1&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;ul&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>&lt;li&gt;&lt;%=&nbsp;@message.untouched&nbsp;%&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&lt;li&gt;&lt;%=&nbsp;@message.encrypted&nbsp;%&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&lt;li&gt;&lt;%=&nbsp;KewlCrypto.new(@message.encrypted).decrypted&nbsp;%&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;/ul&gt;</span></span></span></div></pre><p>Any questions?  Comments?  What&#39;s cool about this new state?</p>
+<p><em>Wait for view discussion</em></p>
+<p>We can jump ahead to the next commit now that we&#39;re done with our OO refactor...</p>
+<h6 id="checkout-0ef99a7-s3-put-kewl_crypt-into-its-own-file">checkout 0ef99a7 s3: put kewl_crypt into its own file</h6>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>git&nbsp;checkout&nbsp;0ef99a7</span></span></span></div></pre><p>We&#39;re now at a point where we have a perfectly fine rails application.  But <strong>what if?</strong> ...what if we want to use our crypto library in other ruby projects?  We&#39;ll have to extract it into a gem.  </p>
+<h1 id="section-3-gem-extraction">Section 3 - Gem Extraction</h1>
+<p>Note: Tests...</p>
+<p>So now it&#39;s time to start a new gem.</p>
+<h2 id="bundler-usage-and-configs">Bundler Usage and Configs</h2>
+<p>It&#39;s a particularly under-advertized feature, but bundler, that nearly ubiquitous ruby gem that tends to be installed at the same time as ruby, has the capability of creating a gem skeleton.  This is really handy!  </p>
+<p>You can configure some helpful defaults for bundler&#39;s gem function in the below file as I&#39;ve done:</p>
+<p>(~/.bundle/config)</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>---</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>BUNDLE_GEM__COC:&nbsp;&#39;false&#39;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>BUNDLE_GEM__TEST:&nbsp;rspec</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>BUNDLE_GEM__MIT:&nbsp;false</span></span></span></div></pre><p>To build a gem, follow these commands:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>cd&nbsp;~/dev/misc/edu/gem_building</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>bundle&nbsp;gem&nbsp;kewl_crypto</span></span></span></div></pre><h2 id="the-anatomy-of-a-gem">The Anatomy of a Gem</h2>
+<p>Let&#39;s briefly go over a gems anatomy.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>├──&nbsp;bin</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>│&nbsp;&nbsp;&nbsp;├──&nbsp;console</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>│&nbsp;&nbsp;&nbsp;└──&nbsp;setup</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>├──&nbsp;Gemfile</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>├──&nbsp;kewl_crypto.gemspec</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>├──&nbsp;lib</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>│&nbsp;&nbsp;&nbsp;├──&nbsp;kewl_crypto</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──&nbsp;version.rb</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>│&nbsp;&nbsp;&nbsp;└──&nbsp;kewl_crypto.rb</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>├──&nbsp;Rakefile</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>├──&nbsp;README.md</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>└──&nbsp;spec</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>├──&nbsp;kewl_crypto_spec.rb</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;spec_helper.rb</span></span></span></div></pre><h6 id="app_name-gemspec">APP_NAME.gemspec</h6>
+<p>This is the main configuration file for your package.  It&#39;s basically how you talk to bundler, gemcutter and rubygems.org.  You indicate your dependencies here, you add a description and name for your gem, and define package details like the version of the gem.  </p>
+<h6 id="lib-app_name-rb">lib/APP_NAME.rb</h6>
+<p>This is the &#39;entry point&#39; for your ruby app.  It&#39;s the first file loaded when someone does a <code>require &#39;your_gem&#39;</code>.  If your gem is simple enough, the entirety of your ruby code will go here.  </p>
+<h6 id="lib-app_name-">lib/APP_NAME/</h6>
+<p>This folder is for when things get out of hand and you need to break your ruby code up into multiple files.  An easy rule for breaking up your ruby library is that each class should have it&#39;s own file.  If a class is massive and has many subclasses that are only used by that one class... then this class can have it&#39;s own folder if you want.  But with rubygems, you actually get to employ a little bit of creativity as to how things are organized...  well, not really creativity, I think of it as impromptu logic deduction.  </p>
+<h6 id="lib-app_name-version-rb">lib/APP_NAME/version.rb</h6>
+<p>This file is where you define the version of your gem.  There&#39;s code in the gemspec file that sources this file such that it can be placed into the configuration object fed to the tool chain.  </p>
+<h6 id="bin-vs-exe-">bin/ vs exe/</h6>
+<p>The bin folder used to be where people put their &#39;binary&#39; files, now it&#39;s got this setup and console rubish in it.  I&#39;m not fond of either of those files, but the new convention is to put your CLI wrappers in the <code>exe/</code> folder rather than in <code>bin/</code>.  Feel free to delete this folder in favor of using <code>pry</code> and unit tests.  </p>
+<h6 id="spec-">spec/</h6>
+<p>Tests!  I talked about this after everything else... hmmm...  So we put all our tests in the spec folder.  This workshop isn&#39;t about testing.  We&#39;ll do that at the end if there&#39;s time, quite ironically...</p>
+<h2 id="gem-extraction-square-1">Gem Extraction, Square 1</h2>
+<p>So now that you know the anatomy of a gem, we can start working.  Gem extraction at it&#39;s best is a matter of copy and pasting.  </p>
+<blockquote>
+<p>Where do I paste in my code?</p>
+</blockquote>
+<p><em>Right!  How about <code>lib/kewl_crypto.rb</code></em></p>
+<p>Let&#39;s take a peak at that file now.  </p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>require&nbsp;&quot;kewl_crypto/version&quot;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>module&nbsp;KewlCrypto</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>#&nbsp;Your&nbsp;code&nbsp;goes&nbsp;here...</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>end</span></span></span></div></pre><p>Oh man, it&#39;s even telling us to do that exact thing right there in the comments.  </p>
+<blockquote>
+<p>My next question is, what code are we going to cut out of the larger_app to be place here?</p>
+</blockquote>
+<p><em>Wait for models/kewl_crypto.rb</em></p>
+<p>Right!  Let&#39;s start that.  </p>
+<p>Maybe the new file will look something like this?
+(lib/kewl_crypto.rb)</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>require&nbsp;&quot;base64&quot;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>require&nbsp;&quot;kewl_crypto/version&quot;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>module&nbsp;KewlCrypto</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>class&nbsp;KewlCrypto</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>attr_reader&nbsp;:untouched</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;initialize(string)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>@untouched&nbsp;=&nbsp;string</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;encrypted</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Base64.encode64(@untouched)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;decrypted</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Base64.decode64(@untouched)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>end</span></span></span></div></pre><h6 id="checkout-g1-basic-extraction">Checkout g1: Basic extraction</h6>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>git&nbsp;checkout&nbsp;850e0af&nbsp;&nbsp;&nbsp;#&nbsp;g1:&nbsp;Basic&nbsp;extraction</span></span></span></div></pre><h2 id="improve-library-interface">Improve Library Interface</h2>
+<h6 id="how-cumbersome">How Cumbersome</h6>
+<p>That&#39;s kinda cool, but using that console script, we can see that it works... but it&#39;s a little bit cumbersome to use.  eg...</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>$&nbsp;&nbsp;ruby&nbsp;bin/console</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;&nbsp;&nbsp;kc&nbsp;=&nbsp;KewlCrypto::KewlCrypto.new(&quot;clear&quot;)</span></span></span></div></pre><h6 id="refactor">Refactor</h6>
+<p>See how we have to type KewlCrypto twice in a row?  That&#39;s pretty much as lame as it gets.  There are a couple ways to deal with this problem, but for me, what I like to do is expose a class variable directly on our KewlCrypto module such that the module method itself is instantiating the KewlCrypto class object and then returning it.  Pretty clever huh?  Let me show you.  </p>
+<p>(lib/kewl_crypto.rb)</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>module&nbsp;KewlCrypto</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;self.new(string)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>KewlCrypto.new(string)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>class&nbsp;KewlCrypto</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>attr_reader&nbsp;:untouched</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;initialize(string)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>@untouched&nbsp;=&nbsp;string</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;encrypted</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Base64.encode64(@untouched)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>def&nbsp;decrypted</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Base64.decode64(@untouched)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>end</span></span></span></div></pre><h6 id="checkout-g2-easier-to-use">checkout g2: easier to use</h6>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>git&nbsp;checkout&nbsp;a06c602&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;g2:&nbsp;easier&nbsp;to&nbsp;use</span></span></span></div></pre><p>Ok that&#39;s cool and easy to use... but...</p>
+<blockquote>
+<p>Is it beautiful?  What do you think?  Would you publish this for your peers to see?  How could we clean it up a bit?</p>
+</blockquote>
+<p><em>Wait for create extra file</em></p>
+<p>Right!  We can move the KewlCrypto class to its own file now.  </p>
+<p>Have a look at this diff</p>
+<p>  <a href="https://github.com/TheNotary/kewl_crypto/commit/01e43f96867cb75b6186380de8e8c559d225cd2b">https://github.com/TheNotary/kewl_crypto/commit/01e43f96867cb75b6186380de8e8c559d225cd2b</a></p>
+<h6 id="checkout-g3-class-gets-own-file">checkout g3: class gets own file</h6>
+<p>I have to admit it&#39;s a bit weird having two files named the same thing in a ruby application.  We can look at this of an instance where we named our gem wrong, or where we named our class wrong.  Either way lets not think about it too much and get on with the workshop.  </p>
+<p>Ok, before we can use this code from a Gemfile, we need to zip the package up into a <code>.gem</code> file.  For this we use rake&#39;s built-in <code>build</code> command.  </p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>rake&nbsp;build</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>kewl_crypto&nbsp;0.1.0&nbsp;built&nbsp;to&nbsp;pkg/kewl_crypto-0.1.0.gem.</span></span></span></div></pre><p>Rake has a handy install command that automates the process of uninstalling the gem at that version if it was previously  the <code>.gem</code> file, rebuilding the <code>.gem</code> file, and then installing it onto your system.  </p>
+<p>Rake also has a <code>release</code> subcommand which will send your gem up to rubygems.org for public consumption.  You need to create an account for that to happen.  We won&#39;t release this code, but that&#39;s the command you run when you want to publish your gem for consumption just like all the other gems you put into your Gemfiles.  </p>
+<h1 id="section-4-hook-it-into-the-rails-app">Section 4 - Hook it into the Rails App</h1>
+<h6 id="source-gem-off-file-system">Source Gem Off File System</h6>
+<p>So now is a good time to hook our new gem into our rails app.  Upon the early stages of gem extraction, it&#39;s best to source the gem directly off the file system.  </p>
+<p>(Gemfile)</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>gem&nbsp;&#39;kewl_crypto&#39;,&nbsp;path:&nbsp;&quot;../kewl_crypto&quot;</span></span></span></div></pre><h6 id="cut-old-logic-from-rails-app">Cut Old Logic from Rails App</h6>
+<p>Now lets cut out that model... and everything should just work since rails automatically requires all the Gems in our Gemfile upon server boot.  </p>
+<h6 id="a-manual-test-indicates-it-worked-">A Manual Test Indicates it Worked!</h6>
+<p>That&#39;s great!  Notice that if we make changes to the gem, we need to reboot the server before they&#39;ll impact the rails app.  </p>
+<p>After everything seems solid, you have the choice to publish the gem to rubygems.org, or perhaps publish them to a private gem server such as geminabox.  </p>
+<p>Who
+haz
+thoughts?</p>
+<p>Quotes:</p>
+<p>Clever things:</p>
+<p>&quot;We&#39;ll come back to this in a moment, but I want to talk about...&quot;</p>
+<p>&quot;WHAT IF x3&quot;  &lt;- repeat to draw attention for part 2 of explanations (this guy is brilliant!)</p>
+<p>&quot;Can anyone tell me&quot;  &lt;- so attention grabbing!  </p>
+<p>&quot;Or another way of putting that&quot;</p>
+<p>&quot;[technical definition] by that I mean [concrete description]&quot;</p>
+<p>&quot;think of it this way&quot; &lt;-</p>
+<p>&quot;For now we&#39;re just going to have to chalk that up to one of the mysteries of X&quot;   &lt;- for when something weird is going on and you can&#39;t stop to debug</p></body>
+</html>
