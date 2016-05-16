@@ -1,15 +1,14 @@
 # Gem Building
 ## Professionalizing Your Ruby Code
 
+Note:  This document was hastily done for a presentation at NoiseBridge.  
+
 #### Presentation Style:
 
 - It's a workshop, so do some typing in your project folder
-- Build a presentation with reveal.js
-  - Write presentation speaking points to be read off of smart phone
-  - Present changes to code via resulting files
-  - Have the whole tutorial open on a separate tab
+- Link to this document in tandem with the Reveal.js slides
 
-#### Speaking Notes/ ToC
+#### ToC
 
 ###### Section 1 - Gems by Example
   - What's a Gem?
@@ -131,13 +130,13 @@ This is a fairly typical workflow for a gem's creation; we do this by first stum
 
 *Wait to see if it's remotely applicable*
 
-I was hoping that someone could tie in the creation of stars to the creation of gems.  But I realized last night that it's not gems that form like stars, rather rails apps do!  All this stuff, these space particles, mostly hydrogen, just kinda drifted in -- gravitated towards this central, monolithic body.  And after a certain point, things started to get hot.  Things got out of hand!  There was too much friction, too much stuff, and things reached the verge of igniting in a blaze of nuclear fusion -- this is the kind of fire that won't extinguish in our god, damn lifetimes.  Once a star reaches that point, it's completely out of anyone's control.  At this point, this point of no return it becomes a fixture of the universe.  A symbol of life amidst haphazardness, amidst chaos --completely absent of any notions of coercion or management outside of it's own brilliant, blazing body.  
+I was hoping that someone could tie in the creation of stars to the creation of gems.  But I realized last night that it's not gems that form like stars, rather rails apps do!  All this stuff, these space particles, mostly hydrogen, just kinda drifted in -- gravitated towards this central, monolithic body.  And after a certain point, things started to get hot.  Things got out of hand!  There was too much friction, too much stuff, and things reached the verge of igniting in a blaze of nuclear fusion -- this is the kind of fire that won't extinguish in our god, damn lifetimes.  Once a star reaches that point, it's completely out of any one's control.  At this point, this point of no return it becomes a fixture of the universe.  A symbol of life amidst haphazardness, amidst chaos --completely absent of any notions of coercion or management outside of it's own brilliant, blazing body.  
 
-Did you bank 50k this year?  100k?  200k?  Ok... ok... but are you a fixture of the universe...  Are you the reason for the spectrum that we know as the periodic table of elements?  No madams and sirs, we are not of these things.  And try as some might with ascriptions of measurements and commendations, those on that path are nothing more than kidders and self-delusionists with but a loose sense of context.  A more noble question than salary or rank I recommend everyone ask themselves is this: am I creating beauty of some kind?  
+Did you bank 50k this year?  100k?  200 kay?  Ok... ok... but at some socio-economic point does a being become a fixture of the universe...  Are the billionaires entrenched in our political vex-o-sphere the reason for the spectrum that we know as the periodic table of elements?  Of course not my dear present company, we are of these things, but as members; as participants.  And try as some might with ascriptions of measurements and commendations, embelishments and bull shit, as hackers we must vigilantly recognize that those on that path are little more than kidders and self-delusionists with but a loose sense of context.  A more noble question than salary or rank that I recommend everyone ask themselves is this: am I creating beauty of some kind?  
 
 Anyway that's what a feature-rich rails application is: A mass of particles on the verge of nuclear detonation.  And maybe every good rails app --MAYBE EVERY GOOD THING should lead up to an explosion.  A really nice one that produces more for the universe than what existed before hand.  Maybe that's what I'm getting at.
 
-With that said, lets begin by first creating a fake rails app that we'll add pseudo complex functionality to.  
+With that said, lets begin by creating a fake rails app that we'll add pseudo complex functionality to.  
 
 
 ## Rails App, Square 1

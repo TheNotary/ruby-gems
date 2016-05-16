@@ -33,20 +33,20 @@ Did you bank 50k this year?  100k?
 
 Ok... ok... 
 
-But are you a fixture. of. the. universe?  
+but at some socio-economic point does a being become a fixture. of. the. universe?  
 
-...Are you the reason for the spectrum that we know as the periodic table of elements?  No madams and sirs, we are of these things but as members; as participants.  
+Are the billionaires entrenched in our political vex-o-sphere the reason for the spectrum that we know as the periodic table of elements?  Of course not my dear present company, we are of these things, but as members; as participants.  
 
 And try as some might with ascriptions of 
 
   - measurements, commendations,
   - embellishments and bullshit, 
 
-those on that path are nothing more than kidders and self-delusionists with but a loose sense of context.  A more noble question than salary or rank I recommend everyone ask themselves is this: Am I creating beauty of some kind?
+as hackers we must vigilantly recognize that those on that those on that path are little more than kidders and self-delusionists with but a loose sense of context.  A more noble question than salary or rank that I recommend everyone ask themselves is this: Am I creating beauty of some kind?
 
 Anyway that's what a feature-rich rails application is: A mass of particles on the verge of nuclear detonation.  And maybe every good rails app --MAYBE EVERY GOOD THING should lead up to an explosion.  A really nice one that produces more for the universe than what exis-ted_be-fore_hand.  Maybe that's what I'm getting at.  
 
-With that said, lets begin by first creating a fake rails app that we'll add pseudo complex functionality to.  
+With that said, lets begin by creating a fake rails app that we'll add pseudo complex functionality to.  
 
 
 
