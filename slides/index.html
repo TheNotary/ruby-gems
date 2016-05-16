@@ -1,0 +1,806 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/my_hacks.css">
+    <!-- <link rel="stylesheet" href="css/theme/black.css"> -->
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section class="--overview">
+          <div style="text-align:right;">
+            <h1> Gem Building </h1> <h3>Professionalizing Your Ruby Code</h3>
+          </div><br>
+
+          <div style="text-align:left;">
+            <p class="fragment">Section 1 - Gems by Example
+            <p class="fragment">Section 2 - Build Pseudo Complex large_app
+            <p class="fragment">Section 3 - Gem Extraction
+            <p class="fragment">Section 4 - Hook it into the Rails App
+          </div>
+
+          <aside class="notes">
+            <p>Thank's Gabe for the honor of contributing to Noisebridge through RailsSchool.org
+            <p>Urge everyone to please give NoiseBridge...  all of your money
+            <p>In this workshop we'll be building our very own Ruby Gem
+          </aside>
+        </section>
+
+
+        <section>
+          <section>
+            <h2> Section 1 - </h2> <h3>Gems by Example</h3>
+
+            <div style="text-align:left;">
+            <p>1. What's a Gem?
+            <p>2. Example of a Gem (hub)
+            <p>3. The value of packaging your code
+
+            <aside class="notes">
+              <p>Elaborate on slides (1 by 1)
+            </aside>
+
+
+          </section>
+
+          <section>
+            What's a gem?
+            <p class="fragment">"A gem is a piece of ruby code that has been formatted into an easy to consume package."</p>
+
+            <aside class="notes">
+              <p>very basic description...
+              <p>Apt-get for the ruby echo-system
+              <p>When U install ruby, you get 2 things: ruby & gem
+            </aside>
+          </section>
+
+          <section>
+            Example of a Gem:
+
+            <pre class="fragment"><div data-trim data-noescape>
+              $  gem install hub
+                 Fetching: hub-1.12.4.gem (100%)
+            </div></pre>
+
+            <aside class="notes">
+              <p>- Let's go over an example... very popular...
+              <p>- Hub is a gem... allows u 2 interact w/ github... CLI
+              <p>- Hub... EASILY installed... ANY platform... ruby installed
+            </aside>
+          </section>
+
+
+          <section>
+            <p>What can Hub do for you?</p>
+            <br>
+            <p class="fragment">
+              Create a repo on github automatically
+            </p>
+            <pre class="fragment"><div data-trim data-noescape>
+              $  mkdir my_project && cd my_project/
+              $  echo 'hello hub' > h.txt
+              $  git init && git add . && git commit -m "initial commit"
+              $  hub create
+              $  git push origin master -u
+            </div></pre>
+
+            <aside class="notes">
+              <p>- Create a repo on your github account
+              <p>- Here let's walk through the demo
+              <p>- WTS (walk through slides)
+            </aside>
+          </section>
+
+          <section>
+            <p>How is it configured?</p><br>
+            <p class="fragment">1 time password request =&gt; auth token</p>
+            <p class="fragment">
+              Configurations:  <span class="inline">~/.config/hub</span>
+            </p>
+            <pre class="fragment"><div data-trim data-noescape>
+              ---
+              github.com:
+              - protocol: https
+                user: TheNotary
+                oauth_token: this_is_sensative_DEADMEET1337
+            </div></pre>
+
+            <aside class="notes">
+              <p>- So you're probably wondering how it works
+              <p>- WTS (walk through slides)
+            </aside>
+          </section>
+
+          <section>
+            <p>Gem is Amazing</p><br>
+            <p class="fragment">gem list</p>
+            <p class="fragment">gem uninstall</p>
+            <p class="fragment">gem install hub -v 1.12.3</p>
+
+            <aside class="notes">
+              <p>- Back to gem!
+              <p>- Gem has a couple fun commands
+              <p>- WTS
+            </aside>
+          </section>
+
+          <section>
+            Wait... multiple versions of a single gem?  How?
+            <p class="fragment">hub _1.12.3_ --version</p>
+          </section>
+
+          <section>
+            <h4>Packaging your Code is Valuable</h4>
+
+            <p class="fragment">&gt; Easily Deploy code on a foreign server</p>
+            <p class="fragment">&gt; Easily include code in OTHER ruby projects</p>
+            <p class="fragment">&gt; Easily update code (after the fact) without breaking dependent codebases</p>
+            <p class="fragment">&gt; Easily share code with others</p>
+
+            <aside class="notes">
+              <p>...it allows you to...[WTS]</p>
+
+              <p>So let's get started making our lives better by packaging up some ruby code.  </p>
+            </aside>
+          </section>
+
+        </section> <!-- End Section 1 ----------------------------------------->
+
+
+
+
+        <section>
+          <section>
+            <h2> Section 2 - </h2> <h3>Build Pseudo Complex large_app</h3>
+            <br>
+
+            <div style="text-align:left;">
+              <p class="fragment fade-up">The Formation of Our Software</p>
+              <p class="fragment fade-up">Rails App, Square 1</p>
+              <p class="fragment fade-up">Add Pseudo complexity, Messy controller</p>
+              <p class="fragment fade-up">Improve via Basic Method Extraction Refactoring</p>
+              <p class="fragment fade-up">OO Refactor</p>
+            </div>
+
+
+            <aside class="notes">
+              <p>WTS</p>
+            </aside>
+          </section>
+
+          <section>
+            <p class="">The Formation of Our Software</p>
+
+
+
+            <aside class="notes">
+              <p>Before we get started... gem... suppose we have some code... large_app... needs to be extracted... </p>
+              <p>Better than supposing... let's do it!</p>
+              <p>We'll add logic to the app then iteratively move it into better and better locations</p>
+            </aside>
+
+          </section>
+
+          <section>
+            <p>What should that logic be?</p> <br>
+            <p class="fragment fade-up">Thwart the NSA!</p>
+
+            <aside class="notes">
+              <p>- Ask slide!
+              <p>- Wait for just a moment... [CLK]
+              <p>- What if
+              <p>- What if we needed to enc/dec a string from...
+              <p>- And we expect to reuse
+            </aside>
+
+          </section>
+
+
+          <section data-transition="slide none">
+            <p class="">Typical Workflow</p>
+
+            <p class="fragment fade-up"> 1)  Have Rails App</p>
+            <p class="fragment fade-up"> 2)  App gets huge and takes forever to test</p>
+            <p class="fragment fade-up"> 3)  App gets extracted into gem(s)</p>
+
+            <aside class="notes">
+              <p>This is a fairly typical workflow for a gem's creation;</p>
+              <p>CREATION...</p>
+              <p>Does anyone know how a star is formed?</p>
+            </aside>
+          </section>
+
+
+          <section data-transition="none">
+            <p class="">Typical Workflow</p>
+
+            <p> 1)  Have Rails App</p>
+            <p> 2)  App gets huge and takes forever to test</p>
+            <p> 3)  App gets extracted into gem(s)</p>
+
+            <aside class="notes">
+              <p>*Work them through it... try to tie it into gems*</p>
+              <p>I was hoping ... tie in creation stars ... gems.</p>
+              <p>But I realized last night it's not gems ... rather rails</p>
+              <p>All this stuff...particles</p>
+              <p>drifted... gravitated... central monolithic body.</p>
+              <p>after certain point ... hot!</p>
+              <p>got outta hand!</p>
+            </aside>
+          </section>
+
+        </section> <!-- End Section 2 ----------------------------------------->
+
+
+
+
+
+        <section>
+          <section>
+            <h2> Section 3 - </h2> <h3>Gem Extraction</h3>
+            <br>
+
+            <div style="display:flex; justify-content: space-around;">
+              <div style="text-align:left;">
+                <p class="fragment fade-up">Bundler Usage and Configs</p>
+                <p class="fragment fade-up">The Anatomy of a Gem</p>
+                <p class="fragment fade-up">Gem Extraction, Square 1</p>
+                <p class="fragment fade-up">Improve Library Interface</p>
+              </div>
+            </div>
+
+
+            <aside class="notes">
+              <p>Before we get started... tests...</p>
+              <p>we should have them...</p>
+              <p>Should be able to</p>
+              <p>WTS</p>
+            </aside>
+          </section>
+
+
+          <section>
+            <h4 class="">Bundler Usage and Configs</h4>
+            <p class="fragment fade-up" data-fragment-index="1"><span class="fragment fade-out" data-fragment-index="2">...and for my third wish, I wish for more wishes!</span></p>
+
+            <div class="fragment" data-fragment-index="2">
+              <span class="inline">(~/.bundle/config)</span>
+              <pre><div data-trim data-noescape>
+                ---
+                BUNDLE_GEM__COC: 'false'
+                BUNDLE_GEM__TEST: rspec
+                BUNDLE_GEM__MIT: false
+              </div></pre>
+            </div>
+
+            <aside class="notes">
+              <p>...under-advertized feature... but bundler, a ruby gem, </p>
+              <p>has the capability to make more gems.</p>
+              <p>Usually installed by default</p>
+            </aside>
+          </section>
+
+
+          <section>
+            <p class="">To build a gem, follow these commands:</p>
+
+            <pre class="fragment"><div data-trim data-noescape>
+              $  cd /tmp
+
+              $  bundle gem kewl_crypto
+            </div></pre>
+
+            <aside class="notes">
+              <p>change into a clean directory, could be tmp, could be somewhere more persistent, either way I want everyone to run this on their local.</p>
+              <p>Actually do the commands</p>
+            </aside>
+
+          </section>
+
+          <section data-transition="slide none">
+            <p class="">Anatomy of a Gem</p>
+
+            <div class="fragment fade-up">
+              <pre><div data-trim data-noescape>
+                .
+                ├── bin
+                │   ├── console
+                │   └── setup
+                ├── Gemfile
+                ├── kewl_crypto.gemspec
+                ├── lib
+                │   ├── kewl_crypto
+                │   │   └── version.rb
+                │   └── kewl_crypto.rb
+                ├── Rakefile
+                ├── README.md
+                └── spec
+                    ├── kewl_crypto_spec.rb
+                    └── spec_helper.rb
+              </div></pre>
+            </div>
+
+            <aside class="notes">
+              <p>Let's briefly go over a gems anatomy.</p>
+              <p>CLK</p>
+              <p>Now that's a lot of crap to go over, but a lot of it is no big deal.</p>
+              <p>Get your favorite text editor ready and open up these files as I go over them.</p>
+            </aside>
+          </section>
+
+          <section data-transition="none">
+            <pre><div data-trim data-noescape>
+              .
+              ├── bin
+              │   ├── console
+              │   └── setup
+              ├── Gemfile
+              ├── <b>kewl_crypto.gemspec</b>
+              ├── lib
+              │   ├── kewl_crypto
+              │   │   └── version.rb
+              │   └── kewl_crypto.rb
+              ├── Rakefile
+              ├── README.md
+              └── spec
+                  ├── kewl_crypto_spec.rb
+                  └── spec_helper.rb
+            </div></pre>
+
+
+            <aside class="notes">
+              <p>
+                This is the main configuration file for your package.  It's basically how you talk to bundler, gemcutter and rubygems.org.  You indicate your dependencies here, you add a description and name for your gem, and define package details like the version of the gem.
+              </p>
+            </aside>
+          </section>
+
+
+          <section data-transition="none">
+            <pre><div data-trim data-noescape>
+              .
+              ├── bin
+              │   ├── console
+              │   └── setup
+              ├── Gemfile
+              ├── kewl_crypto.gemspec
+              ├── <b>lib</b>
+              │   ├── kewl_crypto
+              │   │   └── version.rb
+              │   └── <b>kewl_crypto.rb</b>
+              ├── Rakefile
+              ├── README.md
+              └── spec
+                  ├── kewl_crypto_spec.rb
+                  └── spec_helper.rb
+            </div></pre>
+
+            <aside class="notes">
+              <p>This is the 'entry point' for your ruby app.  It's the first file loaded when someone does a `require 'your_gem'`.  If your gem is simple enough, the entirety of your ruby code will go here.  </p>
+            </aside>
+          </section>
+
+          <section data-transition="none">
+            <pre><div data-trim data-noescape>
+              .
+              ├── bin
+              │   ├── console
+              │   └── setup
+              ├── Gemfile
+              ├── kewl_crypto.gemspec
+              ├── <b>lib</b>
+              │   ├── <b>kewl_crypto</b>
+              │   │   └── version.rb
+              │   └── kewl_crypto.rb
+              ├── Rakefile
+              ├── README.md
+              └── spec
+                  ├── kewl_crypto_spec.rb
+                  └── spec_helper.rb
+            </div></pre>
+
+            <aside class="notes">
+              <p>This folder is for when things get out of hand and you need to break your ruby code up into multiple files.  An easy rule for breaking up your ruby library is that each class should have it's own file.  If a class is massive and has many subclasses that are only used by that one class... then this class can have it's own folder if you want.  But with rubygems, you actually get to employ a little bit of creativity
+              </p>
+            </aside>
+          </section>
+
+          <section data-transition="none">
+            <pre><div data-trim data-noescape>
+              .
+              ├── bin
+              │   ├── console
+              │   └── setup
+              ├── Gemfile
+              ├── kewl_crypto.gemspec
+              ├── lib
+              │   ├── kewl_crypto
+              │   │   └── <b>version.rb</b>
+              │   └── kewl_crypto.rb
+              ├── Rakefile
+              ├── README.md
+              └── spec
+                  ├── kewl_crypto_spec.rb
+                  └── spec_helper.rb
+            </div></pre>
+
+            <aside class="notes">
+              <p>The library's subfolder already contains one file, Version</p>
+              <p>Go ahead and open it up</p>
+              <p>You enter this file when it's time to do a version bump</p>
+              <p>gemspec file that sources</p>
+            </aside>
+          </section>
+
+          <section data-transition="none">
+            <pre><div data-trim data-noescape>
+              .
+              ├── <b>bin</b>
+              │   ├── <b>console</b>
+              │   └── <b>setup</b>
+              ├── Gemfile
+              ├── kewl_crypto.gemspec
+              ├── lib
+              │   ├── kewl_crypto
+              │   │   └── version.rb
+              │   └── kewl_crypto.rb
+              ├── Rakefile
+              ├── README.md
+              └── spec
+                  ├── kewl_crypto_spec.rb
+                  └── spec_helper.rb
+            </div></pre>
+
+            <aside class="notes">
+              <p>The bin folder used to be where people put their 'binary' files, but now it's got this setup and console rubish in it.</p>
+              <p>I'm not fond of either of those files in bin, but... console... setup...</p>
+              <p></p>
+            </aside>
+          </section>
+
+          <section data-transition="none">
+            <pre><div data-trim data-noescape>
+              .
+              ├── bin
+              │   ├── console
+              │   └── setup
+              ├── Gemfile
+              ├── kewl_crypto.gemspec
+              ├── lib
+              │   ├── kewl_crypto
+              │   │   └── version.rb
+              │   └── kewl_crypto.rb
+              ├── Rakefile
+              ├── README.md
+              └── <b>spec</b>
+                  ├── <b>kewl_crypto_spec.rb</b>
+                  └── <b>spec_helper.rb</b>
+            </div></pre>
+
+            <aside class="notes">
+              <p>Tests!  </p>
+              <p>Notice I'm talking about this after everything else... hmmm...</p>
+              <p>This is where your tests go.  Because I'm awesome... rspec</p>
+            </aside>
+          </section><!--  End Anatomy of a Gem -------------------------------->
+
+
+          <section>
+            <p>Gem Extraction, Square 1</p>
+
+            <aside class="notes">
+              <p>So now that you know the anatomy of... </p>
+              <p>Gem extraction at it's best ... copy and pasting.</p>
+
+              <p>--Where do I paste in my code?</p>
+              <p>*Right!  How about `lib/kewl_crypto.rb`*</p>
+              <p>Let's take a peak at that file now.  </p>
+            </aside>
+          </section>
+
+
+          <section>
+            <span class="inline">(lib/kewl_crypto.rb)</span>
+            <pre><div data-trim data-noescape>
+              require "kewl_crypto/version"
+
+              module KewlCrypto
+                # Your code goes here...
+              end
+            </div></pre>
+
+            <aside class="notes">
+              <p>Even tells us!</p>
+              <p>--My next question is, what code are we going to cut out of the larger_app to be place here?</p>
+              <p>*Wait for models/kewl_crypto.rb*</p>
+              <p>Right!  Let's start that.  </p>
+            </aside>
+          </section>
+
+          <section>
+            Switch over to Manual and the text editor at this point???
+          </section>
+
+          <section>
+            Maybe lib/kewl_crypto.rb will look like...
+
+            <span class="inline">(lib/kewl_crypto.rb)</span>
+            <pre><div data-trim data-noescape>
+              require "base64"
+              require "kewl_crypto/version"
+
+              module KewlCrypto
+
+                class KewlCrypto
+                  attr_reader :untouched
+
+                  def initialize(string)
+                    @untouched = string
+                  end
+
+                  def encrypted
+                    Base64.encode64(@untouched)
+                  end
+
+                  def decrypted
+                    Base64.decode64(@untouched)
+                  end
+                end
+
+              end
+            </div></pre>
+
+            <aside class="notes">
+              <p></p>
+            </aside>
+          </section>
+
+
+          <section>
+            <p class="">Checkout g1: Basic extraction</p>
+            <div><span class="inline">git checkout 850e0af</span></div>
+          </section>
+
+
+          <section>
+            <p class="">Improve Library Interface</p>
+            <p class="fragment fade-up">How Cumbersome</p>
+
+            <pre><div data-trim data-noescape>
+            $  ruby bin/console
+            >  kc = KewlCrypto::KewlCrypto.new("clear")
+            </div></pre>
+
+            <aside class="notes">
+              <p>BS about this for a little bit before refactoring live</p>
+            </aside>
+          </section>
+
+          <section>
+            <p class="">Refactor</p>
+
+            <span class="inline">(lib/kewl_crypto.rb)</span>
+            <pre><div data-trim data-noescape>
+              module KewlCrypto
+
+                def self.new(string)
+                  KewlCrypto.new(string)
+                end
+
+                class KewlCrypto
+                  attr_reader :untouched
+
+                  def initialize(string)
+                    @untouched = string
+                  end
+
+                  def encrypted
+                    Base64.encode64(@untouched)
+                  end
+
+                  def decrypted
+                    Base64.decode64(@untouched)
+                  end
+                end
+
+              end
+            </div></pre>
+
+            <aside class="notes">
+              <p>BS about this for a little bit before refactoring live</p>
+            </aside>
+          </section>
+
+          <section>
+            <p class="">Checkout g2: easier to use</p>
+            <div><span class="inline">git checkout a06c602</span></div>
+          </section>
+
+          <section>
+            <p class="">Are we there yet?</p>
+
+            <span class="inline">(lib/kewl_crypto.rb)</span>
+            <pre><div data-trim data-noescape>
+              module KewlCrypto
+
+                def self.new(string)
+                  KewlCrypto.new(string)
+                end
+
+                class KewlCrypto
+                  attr_reader :untouched
+
+                  def initialize(string)
+                    @untouched = string
+                  end
+
+                  def encrypted
+                    Base64.encode64(@untouched)
+                  end
+
+                  def decrypted
+                    Base64.decode64(@untouched)
+                  end
+                end
+
+              end
+            </div></pre>
+
+            <aside class="notes">
+              <p>Ok, that's cool and easy to use... but... look closely... </p>
+              <p>Is it beautiful?  What do you think?  Would you publish this for your peers to see?  How could we clean it up a bit?</p>
+              <p>*Wait for create extra file*</p>
+              <p>Right!  We can move the KewlCrypto class to its own file now.  </p>
+            </aside>
+          </section>
+
+          <section>
+            <p class="">https://github.com/TheNotary/kewl_crypto/commit/01e43f96867cb75b6186380de8e8c559d225cd2b</p>
+
+            <aside class="notes">
+              <p></p>
+            </aside>
+          </section>
+
+          <section>
+            <p class="">Checkout g3: class gets own file</p>
+            <div><span class="inline">git checkout 0618958</span></div>
+
+            <aside class="notes">
+              <p>Weird having two files named the same</p>
+              <p>Named gem wrong?  Named class wrong?</p>
+            </aside>
+          </section>
+
+          <section>
+            <p>Before we can use it, we need to build it</p>
+
+            <pre><div data-trim data-noescape>
+              $  rake build
+                kewl_crypto 0.1.0 built to pkg/kewl_crypto-0.1.0.gem.
+            </div></pre>
+
+            <aside class="notes">
+              <p>zip file</p>
+              <p>rake install</p>
+              <p>rake release</p>
+              <p>rubygems.org account</p>
+            </aside>
+          </section>
+
+
+
+
+        </section> <!-- End Section 3 ----------------------------------------->
+
+
+
+
+        <section>
+          <section>
+            <h2> Section 4 - </h2> <h3>Hook it into the Rails App</h3>
+            <br>
+
+            <div style="display:flex; justify-content: space-around;">
+              <div style="text-align:left;">
+                <p class="fragment fade-up">Source Gem Off File System</p>
+                <p class="fragment fade-up">Cut Old Logic from Rails App</p>
+                <p class="fragment fade-up">A Manual Test Indicates it Worked!</p>
+              </div>
+            </div>
+
+            <aside class="notes">
+              <p>WTS</p>
+            </aside>
+          </section>
+
+
+          <section>
+            <p class="">Source Gem Off File System</p>
+
+            <div class="fragment fade-up">
+              <span class="inline">(Gemfile)</span>
+              <pre><div data-trim data-noescape>
+                $  gem 'kewl_crypto', path: "../kewl_crypto"
+              </div></pre>
+            </div>
+
+            <aside class="notes">
+              <p>early stages... f/s</p>
+            </aside>
+          </section>
+
+
+          <section> <!--  copy this please  -->
+            <p>Cut Old Logic from Rails App</p>
+            <p class="fragment fade-up"></p>
+
+            <aside class="notes">
+              <p>...rails automatically requires our gem...</p>
+              <p></p>
+              <p></p>
+            </aside>
+          </section>
+
+          <section> <!--  copy this please  -->
+            <p class="">Final Manual Test</p>
+            <p class="fragment fade-up"></p>
+
+            <aside class="notes">
+              <p>changes to gem = reboot rails</p>
+              <p>solid?  Publish rubygems.org, offline gemserver, or a git server</p>
+            </aside>
+          </section>
+
+
+        </section> <!-- End Section 4 ----------------------------------------->
+
+        <section>
+          Who haz thoughts?
+        </section>
+
+
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+        // fragments: false,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>

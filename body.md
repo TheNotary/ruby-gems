@@ -7,6 +7,7 @@ Note:  This document was hastily done for a presentation at NoiseBridge.
 
 - It's a workshop, so do some typing in your project folder
 - Link to this document in tandem with the Reveal.js slides
+  - [slides](slides/index.html)
 
 #### ToC
 
