@@ -16,7 +16,6 @@
   - Example of a Gem (hub)
   - The value of packaging your code
 
-
 ###### Section 2 - Build Pseudo Complex large_app
   - The Formation of Our Software
   - Rails App, Square 1
@@ -77,7 +76,7 @@ Hub can easily be installed on any machine that has ruby installed by the below 
 Go ahead and try it now.  In the command's output, you'll see that it fetched `hub-1.12.4.gem`.  That's telling you the name of the gem and the version installed... Gem defaults to the latest version of any given gem.  If that version is no good, you can tell gem to install a specific version manually.  
 
 ```
-  $  gem install -v 1.12.3
+  $  gem install hub -v 1.12.3
 ```
 
 
@@ -100,14 +99,14 @@ I don't know how this works... it just does.
 When I first learned to package my code, I became filled me with feelings of empowerment.  
 Not only was I able to look at all those gems that other professionals had built, and understand how that was made useable to me...
 But it also gave me the power to:  
-  - Easily Deploy my code on a foriegn server
+  - Easily Deploy my code on a foreign server
   - Easily include my code in OTHER ruby projects
-  - Easily update my code (after the fact) without breaking dependant codebases
+  - Easily update my code (after the fact) without breaking dependent codebases
   - Easily share my code with others
 
   Everything about making ruby gems leads to:
-    - increased developer performance
-    - reduced overhead on compatibility issues
+    - Increased developer performance
+    - Reduced overhead on compatibility issues
     - And overall lower cost per employee
 
 Everything about making gems leads to really complicated, stressful things suddenly becoming _easy_.  
@@ -132,14 +131,13 @@ This is a fairly typical workflow for a gem's creation; we do this by first stum
 
 *Wait to see if it's remotely applicable*
 
-I was hoping that someone could tie in the creation of stars to the creation of gems.  But I realized that it's not gems that form like stars, rather rails apps do!  All this stuff, these space particles, mostly hydrogen, just kinda drifted in -- gravitated towards this central, monolithic body.  And after a certain point, things started to get hot.  Things got out of hand!  There was too much friction, too much stuff, and things are on the verge of igniting in a blaze of nuclear fusion -- this is the kind of fire that won't go out in our god damn lifetimes.  Once a star reaches that point, it's completely out of our control.  At this point, this point of no return it's become a fixture of the universe.  A symbol of life amidst haphazardness, amidst chaos --completely absent of any notions of coercion or management.  
+I was hoping that someone could tie in the creation of stars to the creation of gems.  But I realized last night that it's not gems that form like stars, rather rails apps do!  All this stuff, these space particles, mostly hydrogen, just kinda drifted in -- gravitated towards this central, monolithic body.  And after a certain point, things started to get hot.  Things got out of hand!  There was too much friction, too much stuff, and things reached the verge of igniting in a blaze of nuclear fusion -- this is the kind of fire that won't extinguish in our god, damn lifetimes.  Once a star reaches that point, it's completely out of anyone's control.  At this point, this point of no return it becomes a fixture of the universe.  A symbol of life amidst haphazardness, amidst chaos --completely absent of any notions of coercion or management outside of it's own brilliant, blazing body.  
 
-Did you bank 50k this year?  100k?  200k?  Ok... ok... but are you a fixture of the universe...  Are you the reason for the presence of the elemental table we experience as a part of our physical existence?  No madams and sirs, we are not of these things.  Try as one might with ascriptions of measurements and commendations, those on that path are nothing more than kidders and self-delusionists with but a loose sense of context.
+Did you bank 50k this year?  100k?  200k?  Ok... ok... but are you a fixture of the universe...  Are you the reason for the spectrum that we know as the periodic table of elements?  No madams and sirs, we are not of these things.  And try as some might with ascriptions of measurements and commendations, those on that path are nothing more than kidders and self-delusionists with but a loose sense of context.  A more noble question than salary or rank I recommend everyone ask themselves is this: am I creating beauty of some kind?  
 
-Anyway that's what a feature-rich rails application is: A mass of particles on the verge of nuclear detonation.  
+Anyway that's what a feature-rich rails application is: A mass of particles on the verge of nuclear detonation.  And maybe every good rails app --MAYBE EVERY GOOD THING should lead up to an explosion.  A really nice one that produces more for the universe than what existed before hand.  Maybe that's what I'm getting at.
 
 With that said, lets begin by first creating a fake rails app that we'll add pseudo complex functionality to.  
-
 
 
 ## Rails App, Square 1

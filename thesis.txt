@@ -1,0 +1,52 @@
+~ informative speech cadence (John archer) ~
+
+I was hoping, that someone could tie in the creation of stars to the creation of gems.  
+
+~ Fast, intrigued cadence ~
+
+But I realized last night that it's not gems that form like stars, rather rails apps do!  All this stuff, these space particles, mostly hydrogen, just kinda drifted in -- gravitated towards this central, monolithic body.  And after a certain point, 
+
+~ Slow, surprized cadence ~
+
+things started to get hot.  
+
+Things got out of hand!  
+
+There was too much friction, 
+too much stuff, 
+
+~ Pick up pace, warning cadence ~
+
+and things reached the verge of igniting in a blaze of nuclear fusion --this is the kind of fire that won't extinguish in our god damn lifetimes.  
+
+Once a star reaches that point, it's completely out of any _one's_ control.  At this point, this point of no return, it becomes a fixture of the universe.  A symbol of life amidst haphazardness, amidst chaos --completely absent of any notions of coercion or management outside of it's own brilliant, blazing body.  
+
+~ Brooklyn, tell it like it is cadence ~
+
+Did you bank 50k this year?  100k?  
+
+~ lulzy big deal ~
+
+200! kay!  
+
+~ calm down buddy... ~
+
+Ok... ok... 
+
+But are you a fixture. of. the. universe?  
+
+...Are you the reason for the spectrum that we know as the periodic table of elements?  No madams and sirs, we are of these things but as members; as participants.  
+
+And try as some might with ascriptions of 
+
+  - measurements, commendations,
+  - embellishments and bullshit, 
+
+those on that path are nothing more than kidders and self-delusionists with but a loose sense of context.  A more noble question than salary or rank I recommend everyone ask themselves is this: Am I creating beauty of some kind?
+
+Anyway that's what a feature-rich rails application is: A mass of particles on the verge of nuclear detonation.  And maybe every good rails app --MAYBE EVERY GOOD THING should lead up to an explosion.  A really nice one that produces more for the universe than what exis-ted_be-fore_hand.  Maybe that's what I'm getting at.  
+
+With that said, lets begin by first creating a fake rails app that we'll add pseudo complex functionality to.  
+
+
+
